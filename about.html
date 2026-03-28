@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FTGM TikTok Saver</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.125);
+            --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --bg-dark: #05070a;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(79, 172, 254, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(0, 242, 254, 0.1) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Shimmer Effect Animation --- */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer::after {
+            content: "";
+            position: absolute;
+            top: 0; left: -150%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-25deg);
+            animation: shimmerEffect 3s infinite;
+        }
+        @keyframes shimmerEffect {
+            0% { left: -150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- Layout --- */
+        .wrapper {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Branding --- */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #4facfe;
+            padding: 5px;
+            box-shadow: 0 0 30px rgba(79, 172, 254, 0.3);
+            transition: 0.5s;
+        }
+        .main-logo:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        /* --- Content Sections --- */
+        .content-section {
+            margin-bottom: 35px;
+        }
+        .content-section h2 {
+            font-size: 1.4rem;
+            color: #4facfe;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .feature-tag {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .feature-tag:hover {
+            background: rgba(79, 172, 254, 0.1);
+            border-color: #4facfe;
+            transform: translateY(-3px);
+        }
+
+        /* --- Footer & Contact --- */
+        .cta-area {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent-gradient);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .btn-contact:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .footer-line {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .glass-card { padding: 30px 20px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="glass-card shimmer">
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/pLV6bBpR/FTGM-HACKS-LOGO.png" alt="FTGM HACKS LOGO" class="main-logo">
+        </div>
+
+        <h1>About FTGM Tik Saver</h1>
+        <p class="subtitle">Premium TikTok Media Downloader</p>
+
+        <div class="content-section">
+            <h2><i class="fa-solid fa-rocket"></i> Our Mission</h2>
+            <p>FTGM TikTok Saver was built by <b>Rana Faisal Ali</b> to provide users with the fastest and most reliable way to archive TikTok content. We believe in high-quality media access without the clutter of watermarks or complex software.</p>
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fa-solid fa-star"></i> Why Choose Us?</h2>
+            <p>We leverage high-speed API technology to fetch data directly from servers, ensuring you get the original HD quality every time. Our platform is optimized for both mobile and desktop users.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-tag">No Watermark</div>
+                <div class="feature-tag">HD Video Quality</div>
+                <div class="feature-tag">MP3 Extraction</div>
+                <div class="feature-tag">Caption Saving</div>
+                <div class="feature-tag">100% Free</div>
+                <div class="feature-tag">Lightning Fast</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fa-solid fa-shield-halved"></i> Privacy & Safety</h2>
+            <p>We do not store your downloaded videos on our servers. Your privacy is our priority. Our tool acts as a bridge between the source and your device, ensuring a secure and private experience.</p>
+        </div>
+
+        <div class="cta-area">
+            <h3>Need Custom Tools or Support?</h3>
+            <p style="color: var(--text-dim);">Developed with ❤️ by the FTGM HACKS Team.</p>
+            <a href="https://wa.me/923104882921" class="btn-contact">
+                <i class="fa-brands fa-whatsapp"></i> Contact Admin
+            </a>
+            <br>
+            <a href="index.html" style="color: #4facfe; text-decoration: none; display: inline-block; margin-top: 20px; font-weight: 600;">
+                <i class="fa-solid fa-arrow-left"></i> Back to Downloader
+            </a>
+        </div>
+    </div>
+
+    <p class="footer-line">Copyright 2026 | FTGM HACKS Official</p>
+</div>
+
+<script>
+    // Subtle Scroll Animation for sections
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "all 0.6s ease-out";
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
